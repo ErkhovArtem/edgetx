@@ -351,7 +351,6 @@ void setTopBatteryValue(uint32_t volts);
 #else
 #define TELEMETRY_FIFO_SIZE             64
 #endif
-
 #define INTMODULE_FIFO_SIZE            128
 
 #if defined(RADIO_TLITE)

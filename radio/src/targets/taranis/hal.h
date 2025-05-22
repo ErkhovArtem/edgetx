@@ -2321,9 +2321,13 @@
   #define AUX_SERIAL_RX_GPIO                GPIO_PIN(GPIOB, 11) // PB.11
   #define AUX_SERIAL_USART                  USART3
   #define AUX_SERIAL_USART_IRQn             USART3_IRQn
-  #define AUX_SERIAL_DMA_RX                 DMA1
-  #define AUX_SERIAL_DMA_RX_STREAM          LL_DMA_STREAM_1
-  #define AUX_SERIAL_DMA_RX_CHANNEL         LL_DMA_CHANNEL_4
+  #define AUX_SERIAL_DMA_TX                 DMA1
+  #define AUX_SERIAL_DMA_TX_STREAM          LL_DMA_STREAM_1
+  #define AUX_SERIAL_DMA_TX_CHANNEL         LL_DMA_CHANNEL_4
+  #define AUX_SERIAL_DMA_RX                 nullptr
+  #define AUX_SERIAL_DMA_RX_STREAM          0
+  #define AUX_SERIAL_DMA_RX_CHANNEL         0
+
 #endif
 
 // Telemetry
@@ -2588,7 +2592,7 @@
   #define LCD_DMA_FLAG_INT              DMA_HIFCR_CTCIF7
   #define LCD_SPI                       SPI3
   #define LCD_GPIO_AF                   GPIO_AF6
-#elif defined(PCBX9DP) || defined(PCBX7)
+#elif defined(PCBX9DP) || defined(PCBX7) && !defined(RADIO_TX12MK2)
   #define LCD_MOSI_GPIO                 GPIO_PIN(GPIOC, 12) // PC.12
   #define LCD_CLK_GPIO                  GPIO_PIN(GPIOC, 10) // PC.10
   #define LCD_A0_GPIO                   GPIO_PIN(GPIOC, 11) // PC.11

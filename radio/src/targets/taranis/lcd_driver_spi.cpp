@@ -80,7 +80,7 @@ void lcdHardwareInit()
 
   // APB1 clock / 2 = 133nS per clock
   LCD_SPI->CR1 = 0; // Clear any mode error
-  LCD_SPI->CR1 = SPI_CR1_SSM | SPI_CR1_SSI | SPI_CR1_CPOL | SPI_CR1_CPHA | LCD_SPI_PRESCALER;
+  LCD_SPI->CR1 = SPI_CR1_SSM | SPI_CR1_SSI | SPI_CR1_CPOL | SPI_CR1_CPHA | 7; // LCD_SPI_PRESCALER;
   LCD_SPI->CR2 = 0;
   LCD_SPI->CR1 |= SPI_CR1_MSTR;	// Make sure in case SSM/SSI needed to be set first
   LCD_SPI->CR1 |= SPI_CR1_SPE;
